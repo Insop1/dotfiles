@@ -8,7 +8,7 @@ visiblePage=pluginsPage
 visiblePlugin=level_meter#0
 
 [StreamOutputs]
-outputDevice=alsa_output.usb-Topping_DX1-00.pro-output-0
+outputDevice=alsa_output.usb-Topping_DX1-00.HiFi__Headphones__sink
 visiblePage=pluginsPage
 
 [Style]

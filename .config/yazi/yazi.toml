@@ -11,8 +11,8 @@ vscode = [
 reveal = [
   { run = 'thunar "$(dirname "$@")"', orphan = true, desc = "Reveal in Thunar" },
 ]
-vlc = [
-  { run = 'vlc "$@"', orphan = true, desc = "VLC" },
+mpv = [
+  { run = 'mpv "$@"', orphan = true, desc = "Watch with MPV" },
 ]
 run_script = [
   { run = "$@", block = true, desc = "Run script" }
@@ -34,8 +34,8 @@ prepend_rules = [
   { mime = "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}", use = [ "extract_with_ouch", "reveal" ] },
   { mime = "application/{executable,pie-executable}", use = [ "execute", "reveal" ]},
   { mime = "text/*", use = [ "neovim", "vscode" ] },
-  { mime = "video/*", use = "vlc" },
-  { mime = "audio/*", use = "vlc" },
+  { mime = "video/*", use = "mpv" },
+  { mime = "audio/*", use = "mpv" },
 ]
 
 [[plugin.prepend_fetchers]]
