@@ -21,8 +21,9 @@ window#waybar {
 }
 
 #workspaces button {
-  padding: 0 2px;
+  padding: 0 6px;
   margin: 2px 0;
+  min-width: 0px;
 }
 
 tooltip {

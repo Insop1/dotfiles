@@ -27,13 +27,6 @@ hl.monitor({
   scale    = "1.333333",
 })
 
--- unscale XWayland
-hl.config({
-  xwayland = {
-    force_zero_scaling = true
-  }
-})
-
 ---------------------
 ---- MY PROGRAMS ----
 ---------------------
@@ -43,7 +36,6 @@ local taskBar = settings.taskBar
 local wallpaper = settings.wallpaper
 local notifier = settings.notifier
 local editor = settings.editor
-
 local path = os.getenv("PATH") or ""
 local home = os.getenv("HOME")
 
@@ -114,8 +106,7 @@ hl.config({
     resize_on_border = false,
 
     -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
-    allow_tearing = false,
-
+    allow_tearing = true,
     layout = "dwindle",
   },
 

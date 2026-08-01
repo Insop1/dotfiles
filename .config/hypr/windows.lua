@@ -1,6 +1,13 @@
 local settings = require("settings")
 local mainMod = settings.mainMod
 
+-- unscale XWayland
+hl.config({
+  xwayland = {
+    force_zero_scaling = true
+  }
+})
+
 hl.config {
   render = {
     direct_scanout = 1
@@ -10,8 +17,11 @@ hl.config {
 hl.window_rule({
   match = { class = "osu!" },
   fullscreen = true,
-  fullscreen_state = "4 0",
+  immediate = true,
+  fullscreen_state = "2 0",
 })
+
+-- Window rules for special float windows 
 
 -- Window Rules for popups
 local LANDSCAPE = {900, 560}
@@ -40,4 +50,3 @@ local obs = {
    window = "class:com.obsproject.Studio"
 }
 hl.bind(mainMod .. " + PAUSE", hl.dsp.pass(obs))
-
