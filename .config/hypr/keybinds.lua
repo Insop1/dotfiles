@@ -19,9 +19,27 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + up", hl.dsp.layout("togglesplit"))    -- dwindle only
+hl.bind(mainMod .. " + T", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen("maximize", "toggle"))
 hl.bind(mainMod .. " + BACKSPACE", hl.dsp.exec_cmd(locker))
+
+-- Resize
+
+local ratios = { 0.6667, 1.0, 1.3333 }
+local idx = {}
+
+hl.bind(mainMod .. " + R", function()
+  local win = hl.get_active_window()
+  if win == nil or win.floating then return end
+
+  local key = win.address
+  idx[key] = (idx[key] or 2) % #ratios + 1
+  hl.dispatch(hl.dsp.layout("splitratio " .. ratios[idx[key]] .. " exact"))
+end)
+
+hl.on("window.close", function(win)
+  idx[win.address] = nil
+end)
 
 -- Restarting Waybar
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("~/.config/waybar/launch.sh"))

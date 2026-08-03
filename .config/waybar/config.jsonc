@@ -8,19 +8,17 @@
   "modules-left": [
     "niri/workspaces",
     "hyprland/workspaces", 
-    // "mpris"
+    // "mpris",
     "custom/insop-media"
   ],
   "modules-center": [
-    "niri/window",
-    "hyprland/window"
+        "clock"
   ],
   "modules-right": [
     "tray",
     "network",
     "bluetooth",
-    "wireplumber",
-    "clock"
+    "wireplumber"
   ],
 
   "tray": {
@@ -50,7 +48,7 @@
     "tooltip-format": "{essid}\nDown Speed: {bandwidthDownBits}\nUp Speed: {bandwidthUpBits}",
     "tooltip-format-ethernet": "{ifname}\nDown Speed: {bandwidthDownBits}\nUp Speed: {bandwidthUpBits}", 
     "tooltip-format-disconnected": "Disconnected",
-    "on-click": "kitty --class wlctl-popup wlctl"
+    "on-click": "foot -a wlctl-popup wlctl"
   },
   "mpris": {
     "player": "spotify",
@@ -97,14 +95,14 @@
     "format-connected": "󰂱",
     "tooltip-format-connected": "Connections: {num_connections}\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "- {device_alias}",
-    "on-click": "kitty --class bluetui-popup bluetui",
+    "on-click": "foot -a bluetui-popup bluetui",
     "on-click-right": "bt-toggle.sh"
   },
   "hyprland/workspaces": {
     "on-click": "activate"
   },
   "niri/workspaces": {
-    "format": "{index}",
+    "format": "{index}"
   },
   "battery": {
     "format": "{icon}",

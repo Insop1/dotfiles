@@ -1,7 +1,7 @@
 local settings = {}
 
-settings.terminal = "kitty"
-settings.fileManager = "kitty yazi"
+settings.terminal = "footclient"
+settings.fileManager = "footclient yazi"
 settings.menu = "fuzzel"
 settings.taskBar = "waybar"
 settings.wallpaper = "awww-daemon"

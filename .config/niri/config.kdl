@@ -63,7 +63,6 @@ input {
 
     tablet {
       map-to-output "DP-4"
-      calibration-matrix 0.0 2.0 2.0 2.0 2.63 2.0
     }
 
     // Uncomment this to make the mouse warp to the center of newly focused windows.
@@ -350,10 +349,28 @@ window-rule {
     clip-to-geometry true
 }
 
+window-rule {
+    match app-id="org.pulseaudio.pavucontrol"
+    match app-id="blueman-manager"
+    open-floating true
+    default-column-width { fixed 900; }
+    default-window-height { fixed 560; }
+}
+
+// PORTRAIT popups
+window-rule {
+    match app-id="nmtui-popup"
+    match app-id="wlctl-popup"
+    match app-id="bluetui-popup"
+    open-floating true
+    default-column-width { fixed 600; }
+    default-window-height { fixed 820; }
+}
+
 binds {
     // Added keys of my own.
     Mod+Shift+B { spawn "/home/arshiro/.config/waybar/launch.sh"; }
-    Mod+Backspace { spawn "hyprlock"; }
+    Mod+Backspace hotkey-overlay-title="Lock the screen: hyprlock"{ spawn "hyprlock"; }
     
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
     // in the end. To find an XKB name for a particular key, you may use a program
@@ -370,10 +387,9 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Q hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
+    Mod+Q hotkey-overlay-title="Open a Terminal: footclient" { spawn "footclient"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Mod+E hotkey-overlay-title="Open yazi in kitty" { spawn "kitty" "yazi"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Mod+E hotkey-overlay-title="Open yazi in footclient" { spawn "footclient" "yazi"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -565,7 +581,7 @@ binds {
     // Mod+Shift+R { switch-preset-column-width-back; }
 
     Mod+Shift+R { switch-preset-window-height; }
-    // Mod+Shift+Ctrl+R { reset-window-height; }
+    Mod+Shift+Ctrl+R { reset-window-height; }
 
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
