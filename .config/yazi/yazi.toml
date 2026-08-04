@@ -21,7 +21,7 @@ execute = [
   { run = "$@", orphan = true, desc = "Execute" }
 ]
 umu = [
-  { run = "kitty umu-run $@", orphan = true, desc = "umu-run" }
+  { run = "footclient umu-run $@", orphan = true, desc = "umu-run" }
 ]
 extract_with_ouch = [
   { run = 'ouch decompress "$@"', block = false, desc = "Extract here (ouch)" }

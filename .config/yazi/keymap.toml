@@ -1,6 +1,6 @@
 [[mgr.prepend_keymap]]
 on = "T"
-run = "shell --orphan --confirm kitty"
+run = "shell --orphan --confirm footclient"
 desc = "Open terminal here"
 
 [[mgr.prepend_keymap]]

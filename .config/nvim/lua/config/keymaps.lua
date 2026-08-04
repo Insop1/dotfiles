@@ -3,7 +3,7 @@
 -- Add any additional keymaps here
 
 vim.keymap.set("n", "<leader>T", function()
-  vim.fn.jobstart({ "kitty", "--directory", vim.fn.getcwd() }, { detach = true })
+  vim.fn.jobstart({ "footclient", "-D", vim.fn.getcwd() }, { detach = true })
 end, { desc = "Open terminal" })
 
 vim.keymap.set({ "n", "v" }, "c", '"_c')
