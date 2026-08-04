@@ -22,6 +22,7 @@ hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + T", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen("maximize", "toggle"))
 hl.bind(mainMod .. " + BACKSPACE", hl.dsp.exec_cmd(locker))
+hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd("cliphist-fuzzel.sh"))
 
 -- Resize
 
