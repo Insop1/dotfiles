@@ -35,9 +35,6 @@ hl.monitor({
 local taskBar = settings.taskBar
 local wallpaper = settings.wallpaper
 local notifier = settings.notifier
-local editor = settings.editor
-local path = os.getenv("PATH") or ""
-local home = os.getenv("HOME")
 
 -------------------
 ---- AUTOSTART ----
