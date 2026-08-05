@@ -5,6 +5,4 @@ rsync -av --delete \
     ~/.config/{pipewire,easyeffects,fuzzel,hypr,kitty,mako,nvim,waybar,yazi,uwsm,niri,foot} \
     ~/dotfiles/.config/
 
-rsync -av --delete ~/.local/bin/*.sh ~/dotfiles/scripts/
-
 echo "synced"

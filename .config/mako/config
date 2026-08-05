@@ -9,6 +9,7 @@ default-timeout=5000
 anchor=top-right
 max-visible=3
 max-icon-size=48
+height=200
 
 [urgency=critical]
 border-color=#ea6962
