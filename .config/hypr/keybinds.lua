@@ -18,12 +18,13 @@ hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("menu-fuzzel.sh"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + T", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen("maximize", "toggle"))
 hl.bind(mainMod .. " + BACKSPACE", hl.dsp.exec_cmd(locker))
 hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd("cliphist-fuzzel.sh"))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("wallpaper-fuzzel.sh"))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("projects-fuzzel.sh"))
 
 -- Resize
 

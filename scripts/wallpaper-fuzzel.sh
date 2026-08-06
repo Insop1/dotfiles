@@ -16,13 +16,17 @@ for file in "${files[@]}"; do
   fi
 done
 
-choice=$(printf '%s\n' "${filtered[@]##*/}" | sort | fuzzel --dmenu --only-match --prompt "Wallpaper: " --minimal-lines --width 51)
+fuzzel=(fuzzel --dmenu --only-match --prompt "Wallpapers: " \
+    --minimal-lines --lines 10 --width 50)
+
+choice=$(printf '%s\n' "${filtered[@]##*/}" | sort | "${fuzzel[@]}" )
 [[ -z "$choice" ]] && exit 0
 path="$dir/$choice"
 
+args=(-t grow --transition-fps 180 --transition-duration 2)
 error=(notify-send "Wallpaper Error")
 if [[ "$path" == *.sh ]]; then
-  "$path" || "${error[@]}" "Script went wrong"
+  "$path" "${args[@]}" || "${error[@]}" "Script went wrong"
 else
-  err=$(awww img "$path" 2>&1) || "${error[@]}" "$err"
+  err=$(awww img "$path" "${args[@]}" 2>&1) || "${error[@]}" "$err"
 fi

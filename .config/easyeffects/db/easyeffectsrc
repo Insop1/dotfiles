@@ -15,9 +15,9 @@ visiblePage=pluginsPage
 forceBreezeTheme=false
 
 [Window]
-height=1006
+height=496
 showTrayIcon=false
 visiblePage=inputPage
 visiblePipeWirePage=modulesPage
 visiblePresetSheetPage=communityPage
-width=1886
+width=621

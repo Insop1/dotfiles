@@ -1,6 +1,7 @@
 #!/bin/bash
 
-choice=$(printf 'Logout\nCancel\n' | fuzzel --dmenu --only-match --prompt "Are you sure? " --minimal-lines --width=12)
+fuzzel=(fuzzel --dmenu --no-input --prompt "Are you sure? " --minimal-lines --width 12)
+choice=$(printf 'Logout\nCancel\n' | "${fuzzel[@]}" )
 
 if [[ "$choice" == 'Logout' ]]; then
   hyprshutdown --post-cmd 'uwsm stop'
