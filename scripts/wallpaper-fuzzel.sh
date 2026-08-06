@@ -11,7 +11,7 @@ declare -A filtered
 for file in "${files[@]}"; do
   no_ext="${file%.*}"
 
-  if [[ -z "${filtered[$no_ext]}" || "$file" == *.sh ]]; then
+  if [[ ! -v "${filtered[$no_ext]}" || "$file" == *.sh ]]; then
         filtered["$no_ext"]="$file"
   fi
 done

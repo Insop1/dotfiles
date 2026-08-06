@@ -7,5 +7,5 @@ fuzzel=(fuzzel --dmenu --only-match --prompt "Projects: " \
 choice=$( ls -I old "$dir" | sort | "${fuzzel[@]}" )
 
 if [[ -n "$choice" ]]; then
-    $TERMINAL $EDITOR "$dir/$choice"
+    "$TERMINAL" -D "$dir/$choice" -- "$EDITOR" .
 fi

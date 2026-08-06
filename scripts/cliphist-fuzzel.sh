@@ -4,7 +4,7 @@ options="wipe\t󰩹 Clear history\n"
 fuzzel=(fuzzel --dmenu --counter --with-nth 2 --prompt "Clipboard: " \
     --minimal-lines --lines 10 --width 50)
 
-choice=$({ cliphist list; printf "$options"; } | "${fuzzel[@]}")
+choice=$({ cliphist list; printf "%b" "$options"; } | "${fuzzel[@]}")
 
 id=${choice%%$'\t'*}
 
