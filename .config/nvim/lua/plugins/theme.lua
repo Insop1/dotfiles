@@ -1,6 +1,5 @@
 -- Theme
 
-
 return {
   { "sainnhe/gruvbox-material" },
   {

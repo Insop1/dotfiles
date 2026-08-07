@@ -370,7 +370,10 @@ window-rule {
 binds {
     // Added keys of my own.
     Mod+Shift+B { spawn "/home/arshiro/.config/waybar/launch.sh"; }
-    Mod+Backspace hotkey-overlay-title="Lock the screen: hyprlock"{ spawn "hyprlock"; }
+    Mod+B { spawn "wallpaper-fuzzel.sh"; }
+    Mod+M { spawn "menu-fuzzel.sh"; }
+    Mod+Y { spawn "cliphist-fuzzel.sh"; }
+    Mod+P { spawn "projects-fuzzel.sh"; }
     
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
     // in the end. To find an XKB name for a particular key, you may use a program
@@ -590,7 +593,7 @@ binds {
     // maximize-window-to-edges doesn't: the window expands to the edges of the screen.
     // This bind corresponds to normal window maximizing,
     // e.g. by double-clicking on the titlebar.
-    Mod+M { maximize-window-to-edges; }
+    Mod+Shift+M { maximize-window-to-edges; }
 
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".
@@ -646,9 +649,6 @@ binds {
     // The allow-inhibiting=false property can be applied to other binds as well,
     // which ensures niri always processes them, even when an inhibitor is active.
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
-
-    // The quit action will show a confirmation dialog to avoid accidental exits.
-    Mod+Shift+M { quit; }
 
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.

@@ -4,11 +4,6 @@ local mainMod = settings.mainMod -- Sets "Windows" key as main modifier
 local terminal    = settings.terminal
 local fileManager = settings.fileManager
 local menu        = settings.menu
-local taskBar = settings.taskBar
-local wallpaper = settings.wallpaper
-local notifier = settings.notifier
-local locker = settings.locker
-local editor = settings.editor
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
@@ -21,7 +16,6 @@ hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + SHIFT + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + T", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen("maximize", "toggle"))
-hl.bind(mainMod .. " + BACKSPACE", hl.dsp.exec_cmd(locker))
 hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd("cliphist-fuzzel.sh"))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("wallpaper-fuzzel.sh"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("projects-fuzzel.sh"))

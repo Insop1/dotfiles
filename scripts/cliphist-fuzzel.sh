@@ -1,16 +1,16 @@
 #!/bin/bash
 
-options="wipe\t󰩹 Clear history\n"
+options=("wipe\t󰩹 Clear history")
 fuzzel=(fuzzel --dmenu --counter --with-nth 2 --prompt "Clipboard: " \
-    --minimal-lines --lines 10 --width 50)
+--minimal-lines --lines 10 --width 50)
 
-choice=$({ cliphist list; printf "%b" "$options"; } | "${fuzzel[@]}")
+choice=$({ cliphist list; printf "%b\n" "${options[@]}"; } | "${fuzzel[@]}")
 
 id=${choice%%$'\t'*}
 
 case "$id" in
-  "") exit 0 ;;
-  wipe) cliphist wipe ;;
-  *) printf '%s' "$choice" | cliphist decode | wl-copy ;;
+    "") exit 0 ;;
+    wipe) cliphist wipe ;;
+    *) printf '%s' "$choice" | cliphist decode | wl-copy ;;
 esac
 
