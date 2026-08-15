@@ -1,6 +1,6 @@
 # Dotfiles (Laptop)
 
-Fedora 44 + Hyprland.
+Fedora 44 + Niri.
 
 ## Insop-Media
 
