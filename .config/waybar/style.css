@@ -23,6 +23,7 @@ window#waybar {
 #workspaces button {
   padding: 0 6px;
   margin: 2px 0;
+  min-width: 0px;
 }
 
 tooltip {
@@ -30,10 +31,3 @@ tooltip {
   border: 2px solid #45403d;
 }
 
-#battery.critical {
-  animation: blink 1s infinite alternate;
-}
-
-@keyframes blink {
-  to { opacity: 0.3; }
-}

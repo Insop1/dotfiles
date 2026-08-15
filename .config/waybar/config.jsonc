@@ -6,20 +6,19 @@
   "margin-left": 8,
   "margin-right": 8,
   "modules-left": [
-    "hyprland/workspaces", 
-    // "mpris"
+    "niri/workspaces",
+    // "mpris",
     "custom/insop-media"
   ],
   "modules-center": [
-    "hyprland/window"
+        "clock"
   ],
   "modules-right": [
     "tray",
     "network",
     "bluetooth",
-    "wireplumber",
     "battery",
-    "clock"
+    "wireplumber"
   ],
 
   "tray": {
@@ -49,7 +48,7 @@
     "tooltip-format": "{essid}\nDown Speed: {bandwidthDownBits}\nUp Speed: {bandwidthUpBits}",
     "tooltip-format-ethernet": "{ifname}\nDown Speed: {bandwidthDownBits}\nUp Speed: {bandwidthUpBits}", 
     "tooltip-format-disconnected": "Disconnected",
-    "on-click": "kitty --class wlctl-popup wlctl"
+    "on-click": "foot -a wlctl-popup wlctl"
   },
   "mpris": {
     "player": "spotify",
@@ -71,9 +70,11 @@
     "return-type": "json",
     "on-click": "insop-media toggle",
     "on-click-right": "insop-media next",
-    "on-click-middle": "insop-media previous"
+    "on-click-middle": "insop-media previous",
+    "on-scroll-up": "insop-media volume 0.05+",
+    "on-scroll-down": "insop-media volume 0.050-"
   },
-  "hyprland/window": {
+  "niri/window": {
     "format": "{title}",
     "separate-outputs": true,
     "max-length": 30
@@ -89,10 +90,11 @@
     "format-connected": "󰂱",
     "tooltip-format-connected": "Connections: {num_connections}\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "- {device_alias}",
-    "on-click": "kitty --class bluetui-popup bluetui"
+    "on-click": "foot -a bluetui-popup bluetui",
+    "on-click-right": "bt-toggle.sh"
   },
-  "hyprland/workspaces": {
-    "on-click": "activate"
+  "niri/workspaces": {
+    "format": "{index}"
   },
   "battery": {
     "states": {
@@ -105,12 +107,5 @@
     "format-time": "{H}h {M}m",
     "tooltip-format-charging": "{capacity}% · Charging",
     "tooltip-format-discharging": "{capacity}% · {time}"
-  },
-  "backlight": {
-    "format": "<span letter_spacing='6000'>{icon}</span>{percent}%",
-    "format-icons": ["󰃞", "󰃟", "󰃠"],
-    "on-scroll-up": "brightnessctl set 5%+",
-    "on-scroll-down": "brightnessctl set 5%-",
-    "tooltip": false
   }
 }
