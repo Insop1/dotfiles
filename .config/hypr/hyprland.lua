@@ -13,19 +13,8 @@ require("tablets")
 require("windows")
 require("animations")
 require("keybinds")
+require("monitors")
 local settings = require("settings")
-
-------------------
----- MONITORS ----
-------------------
-
--- See https://wiki.hypr.land/Configuring/Basics/Monitors/
-hl.monitor({
-  output   = "",
-  mode     = "2560x1440@180",
-  position = "auto",
-  scale    = "1.333333",
-})
 
 ---------------------
 ---- MY PROGRAMS ----

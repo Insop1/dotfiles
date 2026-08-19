@@ -9,7 +9,7 @@
     "niri/workspaces",
     "hyprland/workspaces", 
     // "mpris",
-    "custom/insop-media"
+    "custom/insop-media",
   ],
   "modules-center": [
         "clock"
@@ -23,7 +23,7 @@
 
   "tray": {
     "icon-size": 16,
-    "spacing": 10 
+    "spacing": 10
   },
   "wireplumber": {
     "format": "<span letter_spacing='6000'>{icon}</span>{volume}%",

@@ -5,7 +5,7 @@ processAllOutputs=false
 inputDevice=alsa_input.usb-352f_PD200X_Podcast_Microphone_214b206000000178-00.mono-fallback
 plugins=rnnoise#0,gate#0,compressor#0,equalizer#0,limiter#0,level_meter#0
 visiblePage=pluginsPage
-visiblePlugin=rnnoise#0
+visiblePlugin=level_meter#0
 
 [StreamOutputs]
 outputDevice=alsa_output.usb-Topping_DX1-00.HiFi__Headphones__sink

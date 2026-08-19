@@ -3,7 +3,7 @@
 # 󰐥 󰜉 󰤄 󰍃 󰌾 󰍁
 
 options=("󰍁 Lock" "󰍃 Logout" "󰜉 Reboot" "󰐥 Power Off" "󰅖 Cancel")
-fuzzel=(fuzzel --dmenu --no-input --prompt "Power Menu:" \
+fuzzel=(fuzzel --dmenu --no-input --prompt "Power Menu" \
     --minimal-lines --width 12 --nth-delimiter " " --accept-nth 2)
 
 choice=$(printf "%b\n" "${options[@]}" | "${fuzzel[@]}" )

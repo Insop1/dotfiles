@@ -15,16 +15,19 @@ mpv = [
   { run = 'mpv "$@"', orphan = true, desc = "Watch with MPV" },
 ]
 run_script = [
-  { run = "$@", block = true, desc = "Run script" }
+  { run = '$@', block = true, desc = "Run script" }
 ]
 execute = [
-  { run = "$@", orphan = true, desc = "Execute" }
+  { run = '$@', orphan = true, desc = "Execute" }
 ]
 umu = [
-  { run = "footclient umu-run $@", orphan = true, desc = "umu-run" }
+  { run = 'footclient umu-run "$@"', orphan = true, desc = "umu-run" }
 ]
 extract_with_ouch = [
   { run = 'ouch decompress "$@"', block = false, desc = "Extract here (ouch)" }
+]
+losslesscut = [
+    { run = 'losslesscut "$@"', orphan = true, desc = "Open with losslesscut" }
 ]
 
 [open]
@@ -34,7 +37,7 @@ prepend_rules = [
   { mime = "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}", use = [ "extract_with_ouch", "reveal" ] },
   { mime = "application/{executable,pie-executable}", use = [ "execute", "reveal" ]},
   { mime = "text/*", use = [ "neovim", "vscode" ] },
-  { mime = "video/*", use = "mpv" },
+  { mime = "video/*", use = [ "mpv", "losslesscut" ] },
   { mime = "audio/*", use = "mpv" },
 ]
 
