@@ -3,31 +3,31 @@ show_hidden = true
 
 [opener]
 neovim = [
-  { run = 'nvim "$@"', block = true, desc = "Neovim" },
+  { run = 'nvim "%s"', block = true, desc = "Neovim" },
 ]
 vscode = [
-  { run = 'code "$@"', orphan = true, desc = "VSCode" },
+  { run = 'code "%s"', orphan = true, desc = "VSCode" },
 ]
 reveal = [
-  { run = 'thunar "$(dirname "$@")"', orphan = true, desc = "Reveal in Thunar" },
+  { run = 'thunar "$(dirname "%s")"', orphan = true, desc = "Reveal in Thunar" },
 ]
 mpv = [
-  { run = 'mpv "$@"', orphan = true, desc = "Watch with MPV" },
+  { run = 'mpv "%s"', orphan = true, desc = "Watch with MPV" },
 ]
 run_script = [
-  { run = '$@', block = true, desc = "Run script" }
+  { run = '%s', block = true, desc = "Run script" }
 ]
 execute = [
-  { run = '$@', orphan = true, desc = "Execute" }
+  { run = '%s', orphan = true, desc = "Execute" }
 ]
 umu = [
-  { run = 'footclient umu-run "$@"', orphan = true, desc = "umu-run" }
+  { run = 'footclient umu-run "%s"', orphan = true, desc = "umu-run" }
 ]
 extract_with_ouch = [
-  { run = 'ouch decompress "$@"', block = false, desc = "Extract here (ouch)" }
+  { run = 'ouch decompress "%s"', block = false, desc = "Extract here (ouch)" }
 ]
 losslesscut = [
-    { run = 'losslesscut "$@"', orphan = true, desc = "Open with losslesscut" }
+    { run = 'losslesscut "%s"', orphan = true, desc = "Open with losslesscut" }
 ]
 
 [open]

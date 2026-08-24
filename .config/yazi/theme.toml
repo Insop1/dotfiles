@@ -1,8 +1,9 @@
 [git]
-modified_sign = "M"
+unstaged_sign = "M"
 deleted_sign = "D"
 added_sign = "A"
 updated_sign = "U"
+clean_sign = "✔"
 
 [flavor]
 dark = "gruvbox-material"
